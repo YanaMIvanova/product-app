@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import { string, number, func } from 'prop-types'
 
-export class Product extends PureComponent {
+export class ProductContainer extends PureComponent {
     static propTypes = {
         name: string,
         price: number,

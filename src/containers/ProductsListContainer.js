@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react'
-import {Product} from '../components/Product'
+import {ProductContainer} from '../components/ProductContainer'
 import {Total} from '../components/Total'
 import {AddProductForm} from '../components/AddProductForm'
 
-export class ProductContainer extends PureComponent {
+export class ProductsListContainer extends PureComponent {
     state = {
         totalCash: 0,
         currentID: 0,
@@ -48,10 +48,10 @@ export class ProductContainer extends PureComponent {
     render() {
         const products = this.state.products.map((product) => {
             return (
-                <Product name={product.name} price={product.price}
-                         addToTotalCash={this.calculate_addToTotalCash}
-                         removeFromTotalCash={this.calculate_removeFromTotalCash}
-                         totalCash={this.state.totalCash} />
+                <ProductContainer name={product.name} price={product.price}
+                                  addToTotalCash={this.calculate_addToTotalCash}
+                                  removeFromTotalCash={this.calculate_removeFromTotalCash}
+                                  totalCash={this.state.totalCash} />
             )
         })
 
