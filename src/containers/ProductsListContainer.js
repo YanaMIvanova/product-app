@@ -31,10 +31,6 @@ export class ProductContainer extends PureComponent {
         console.log(product)
     }
 
-    showProduct = (name) => {
-        alert("You selected " + name)
-    }
-
     calculate_addToTotalCash = (price) => {
         this.setState({
             totalCash: this.state.totalCash + price
@@ -53,7 +49,6 @@ export class ProductContainer extends PureComponent {
         const products = this.state.products.map((product) => {
             return (
                 <Product name={product.name} price={product.price}
-                         handleShow={this.showProduct}
                          addToTotalCash={this.calculate_addToTotalCash}
                          removeFromTotalCash={this.calculate_removeFromTotalCash}
                          totalCash={this.state.totalCash} />

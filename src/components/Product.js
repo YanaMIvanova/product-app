@@ -5,7 +5,6 @@ export class Product extends PureComponent {
     static propTypes = {
         name: string,
         price: number,
-        handleShow: func,
         addToTotalCash: func,
         removeFromTotalCash: func,
         totalCash: number
@@ -37,12 +36,6 @@ export class Product extends PureComponent {
         addToTotalCash(price)
     }
 
-    show = () => {
-        const { handleShow, name } = this.props
-
-        handleShow(name)
-    }
-
     returnProduct = () => {
         const { removeFromTotalCash, price } = this.props
         const { qty: currentQty, qty } = this.state
@@ -65,9 +58,6 @@ export class Product extends PureComponent {
                 <p>{name} - ${price}</p>
                 <button onClick={this.buy} disabled={this.chechIfCanAfford()} >
                     Buy
-                </button>
-                <button onClick={this.show}>
-                    Show
                 </button>
                 <button onClick={this.returnProduct} disabled={this.chechIfIsBought()} >
                     Return
